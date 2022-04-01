@@ -1,0 +1,91 @@
+{
+  "name": "app",
+  "version": "0.0.1",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "description": "Business Application",
+  "engines": {
+    "node": "14.x"
+  },
+  "dependencies": {
+    "@sap/cds": "^5",
+    "@sap/audit-logging": "^5",
+    "@sap/hana-client": "^2",
+    "@sap/xsenv": "^3",
+    "@sap/xssec": "^3",
+    "passport": "^0.4.1",
+    "debug": "^4.3",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "sqlite3": "^5",
+    "@sap/ux-specification": "^1.96.4"
+  },
+  "sapux": [
+    "app/resources/fiori"
+  ],
+  "scripts": {
+    "start": "npx cds run"
+  },
+  "cds": {
+    "requires": {
+      "uaa": {
+        "kind": "xsuaa"
+      },
+      "auth": {
+        "[production]": {
+          "strategy": "JWT"
+        },
+        "[development]": {
+          "strategy": "mock",
+          "users": {
+            "joe": {
+              "roles": [
+                "Admin",
+                "Viewer"
+              ]
+            },
+            "julie": {
+              "roles": [
+                "Viewer"
+              ]
+            },
+            "bob": {
+              "roles": [
+                "Viewer"
+              ]
+            }
+          }
+        }
+      },
+      "db": {
+        "[production]": {
+          "kind": "hana"
+        },
+        "[development]": {
+          "kind": "sql"
+        },
+        "model": [
+          "db",
+          "srv"
+        ]
+      },
+      "NearEarthObjectWebService": {
+        "kind": "rest",
+        "impl": "srv/external/NearEarthObjectWebService.js",
+        "credentials": {
+          "[production]": {
+            "destination": "app-NASA-api",
+            "path": "neo/rest/v1"
+          },
+          "[development]": {
+            "url": "https://api.nasa.gov/neo/rest/v1"
+          }
+        }
+      }
+    },
+    "hana": {
+      "deploy-format": "hdbtable"
+    }
+  }
+}
