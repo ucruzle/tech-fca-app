@@ -3,7 +3,7 @@ _schema-version: 3.3.0
 version: 0.0.1
 
 modules:
-  - name: my-node-app-01
+  - name: demonode
     type: application
     path: nodejs-app
     parameters:
