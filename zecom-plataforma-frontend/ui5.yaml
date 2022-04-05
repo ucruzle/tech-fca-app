@@ -1,4 +1,4 @@
-specVersion: '2.6'
+specVersion: '2.3'
 metadata:
   name: zecom-plataforma-frontend
 type: application
