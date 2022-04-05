@@ -1,4 +1,4 @@
-# My Demo-Sales-Lead-Info
+# Demo-Sales-Lead-Info
 
 - Demo App for SAP® BTP Examples of Sales Lead Info App Made with NodeJS and EJS
 - EJS Script is Used with Semantic UI to Display Data in List
