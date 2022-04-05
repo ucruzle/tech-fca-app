@@ -1,0 +1,377 @@
+{
+	"_version": "1.1.0",
+	"sap.app": {
+		"_version": "1.1.0",
+		"id": "sap.ecom.plataforma",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponent",
+			"version": "0.0.0"
+		},
+		"dataSources": {
+			"ZPM_LISTAS_AUXILIARES_SRV": {
+				"uri": "/sap/opu/odata/sap/ZPM_LISTAS_AUXILIARES_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml",
+					"annotations": [
+						"ODataAnnotation1"
+					]
+				}
+			},
+			"ZPM_ORDEM_SRV": {
+				"uri": "/sap/opu/odata/sap/ZPM_ORDEM_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZPM_ORDEM_SRV/metadata.xml"
+				}
+			},
+			"ZPM_ORDEM_MODIF_SRV": {
+				"uri": "/sap/opu/odata/sap/ZPM_ORDEM_MODIF_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZPM_ORDEM_MODIF_SRV/metadata.xml"
+				}
+			},
+			"ODataAnnotation1": {
+				"uri": "",
+				"type": "ODataAnnotation",
+				"settings": {
+					"localUri": ""
+				}
+			},
+			"ZPM_ORDEM_APONTAMENTO_SRV": {
+				"uri": "/sap/opu/odata/sap/ZPM_ORDEM_APONTAMENTO_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZPM_ORDEM_APONTAMENTO_SRV/metadata.xml"
+				}
+			},
+			"ZPM_ORDEM_CONSUMO_SRV": {
+				"uri": "/sap/opu/odata/sap/ZPM_ORDEM_CONSUMO_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZPM_ORDEM_CONSUMO_SRV/metadata.xml"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"_version": "1.1.0",
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"_version": "1.1.0",
+		"rootView": {
+			"viewName": "sap.ecom.plataforma.view.Home",
+			"type": "XML",
+			"async": true,
+			"id": "root"
+		},
+		"routing": {
+		  "config": {
+			"routerClass": "sap.m.routing.Router",
+			"viewType": "XML",
+			"viewPath": "sap.ecom.plataforma.view",
+			"controlId": "root",
+			"controlAggregation": "pages",
+			"async": true
+		  },
+		  "routes": [
+			{
+			  "pattern": "",
+			  "name": "cockpit",
+			  "target": [
+			  	"cockpit"
+		  	  ]
+			},
+			{
+			  "pattern": "listavendas",
+			  "name": "listavendas",
+			  "target": [
+				"listavendas"
+			  ]
+			},
+			{
+			  "pattern": "gerapedidodevenda",
+			  "name": "gerapedidodevenda",
+			  "target": [
+				"gerapedidodevenda"
+			  ]
+			},
+			{
+				"pattern": "listastatuspedidosdevendas",
+				"name": "listastatuspedidosdevendas",
+				"target": [
+				  "listastatuspedidosdevendas"
+				]
+			  },
+			  {
+				"pattern": "listaparceiros",
+				"name": "listaparceiros",
+				"target": [
+				  "listaparceiros"
+				]
+			  },
+			  {
+				"pattern": "listaprodutos",
+				"name": "listaprodutos",
+				"target": [
+				  "listaprodutos"
+				]
+			  },
+			  {
+				"pattern": "listacentros",
+				"name": "listacentros",
+				"target": [
+				  "listacentros"
+				]
+			  },
+			  {
+				"pattern": "listatiposdeordensvendas",
+				"name": "listatiposdeordensvendas",
+				"target": [
+				  "listatiposdeordensvendas"
+				]
+			  },
+			  {
+				"pattern": "listaorganizacoesdevendas",
+				"name": "listaorganizacoesdevendas",
+				"target": [
+				  "listaorganizacoesdevendas"
+				]
+			  },
+			  {
+				"pattern": "listacanaisdedistribuicao",
+				"name": "listacanaisdedistribuicao",
+				"target": [
+				  "listacanaisdedistribuicao"
+				]
+			  },
+			  {
+				"pattern": "listasetoresdeatividades",
+				"name": "listasetoresdeatividades",
+				"target": [
+				  "listasetoresdeatividades"
+				]
+			  },
+			  {
+				"pattern": "listacondicoesdepagamentos",
+				"name": "listacondicoesdepagamentos",
+				"target": [
+				  "listacondicoesdepagamentos"
+				]
+			  },
+			  {
+				"pattern": "listatiposdecondicoes",
+				"name": "listatiposdecondicoes",
+				"target": [
+				  "listatiposdecondicoes"
+				]
+			  },
+			  {
+				"pattern": "listacategoriadoitem",
+				"name": "listacategoriadoitem",
+				"target": [
+				  "listacategoriadoitem"
+				]
+			  }			
+		  ],
+		  "targets": {
+			"cockpit": {
+			  "viewId": "cockpit",
+			  "viewName": "Cockpit",
+			  "controlAggregation": "pages"
+			},
+			"listavendas": {
+		      "viewId": "listavendas",
+			  "viewName": "ListaVendas",
+			  "controlAggregation": "pages"
+			},
+			"gerapedidodevenda": {
+			  "viewId": "gerapedidodevenda",
+			  "viewName": "GeraPedidoDeVenda",
+			  "controlAggregation": "pages"
+			},
+			"listastatuspedidosdevendas": {
+			  "viewId": "listastatuspedidosdevendas",
+			  "viewName": "ListaStatusPedidosDeVendas",
+			  "controlAggregation": "pages"
+			},
+			"listaparceiros": {
+			  "viewId": "listaparceiros",
+			  "viewName": "ListaParceiros",
+			  "controlAggregation": "pages"
+			},
+			"listaprodutos": {
+			  "viewId": "listaprodutos",
+			  "viewName": "ListaProdutos",
+			  "controlAggregation": "pages"
+			},
+			"listacentros": {
+			  "viewId": "listacentros",
+			  "viewName": "ListaCentros",
+			  "controlAggregation": "pages"
+			},
+			"listatiposdeordensvendas": {
+			  "viewId": "listatiposdeordensvendas",
+			  "viewName": "ListaTiposDeOrdensVendas",
+			  "controlAggregation": "pages"
+			},
+			"listaorganizacoesdevendas": {
+			  "viewId": "listaorganizacoesdevendas",
+			  "viewName": "ListaOrganizacoesDeVendas",
+			  "controlAggregation": "pages"
+			},
+			"listacanaisdedistribuicao": {
+			  "viewId": "listacanaisdedistribuicao",
+			  "viewName": "ListaCanaisDeDistribuicao",
+			  "controlAggregation": "pages"
+			},
+			"listasetoresdeatividades": {
+			  "viewId": "listasetoresdeatividades",
+			  "viewName": "ListaSetoresDeAtividades",
+			  "controlAggregation": "pages"
+			},
+			"listacondicoesdepagamentos": {
+			  "viewId": "listacondicoesdepagamentos",
+			  "viewName": "ListaCondicoesDePagamentos",
+			  "controlAggregation": "pages"
+			},
+			"listatiposdecondicoes": {
+			  "viewId": "listatiposdecondicoes",
+			  "viewName": "ListaTiposDeCondicoes",
+			  "controlAggregation": "pages"
+			},
+			"listacategoriadoitem": {
+			  "viewId": "listacategoriadoitem",
+			  "viewName": "ListaCategoriaDoItem",
+			  "controlAggregation": "pages"
+			}
+		  }
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "sap.ecom.plataforma.i18n.i18n"
+				}
+			},
+			"ListasAuxiliares": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZPM_LISTAS_AUXILIARES_SRV",
+				"preload": true
+			},
+			"ListasAuxiliaresLocal": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"preload": false
+			},
+			"OrdemService": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneTime",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZPM_ORDEM_SRV",
+				"preload": true
+			},
+			"Ordem": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"preload": false
+			},
+			"OrdemModifService": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneTime",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZPM_ORDEM_MODIF_SRV",
+				"preload": true
+			},
+			"OrdemApontamento": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneTime",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZPM_ORDEM_APONTAMENTO_SRV",
+				"preload": true
+			},
+			"OrdemConsumoService": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneTime",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZPM_ORDEM_CONSUMO_SRV",
+				"preload": true
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		}
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/sap/ZECOM-PLATAFORMA-FRONTEND",
+		"_version": "1.1.0"
+	},
+	"sap.platform.hcp": {
+		"uri": "",
+		"_version": "1.1.0"
+	}
+}

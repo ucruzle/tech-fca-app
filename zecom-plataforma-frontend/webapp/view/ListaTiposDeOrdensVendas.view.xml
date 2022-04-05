@@ -1,0 +1,108 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" 
+          xmlns="sap.m" 
+          xmlns:core="sap.ui.core" 
+          xmlns:f="sap.ui.layout.form" 
+	      xmlns:l="sap.ui.layout"
+		  xmlns:html="http://www.w3.org/1999/xhtml" 
+	      displayBlock="true" 
+          class="sapUiSizeCompact"
+		  controllerName="sap.ecom.plataforma.controller.ListaTiposDeOrdensVendas">
+
+	<Page title="Lista Tipos de Ordens de Vendas" showHeader="true" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+											
+			<f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12"
+						  adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="4" columnsL="4" columnsM="4"
+						  singleContainerFullSize="false" title="Exibir, criar novos tipos de ordens de vendas">
+			
+				<f:content>
+					
+					<!-- 1º coluna - Início -->
+
+					<core:Title text="" level="H6"/>
+
+					<Label text="Início" required="false"/>
+					<DatePicker id="dataDe" displayFormat="short" 
+						value="{ path: '/dataDe', type: 'sap.ui.model.type.Date', formatOptions: {style: 'short', UTC: true}}" 
+						tooltip="Data / Hora Início" change="" />
+                    <TimePicker id="horaDe" dateValue="{/horaDe}" tooltip="Hora Chegada" change="" />
+
+					<Label text="Fim" required="false"/>
+					<DatePicker id="dataAte" displayFormat="short" 
+						value="{ path: '/dataAte', type: 'sap.ui.model.type.Date', formatOptions: {style: 'short', UTC: true}}" 
+						tooltip="Data / Hora Fim" change="" />
+                    <TimePicker id="horaAte" dateValue="{/horaAte}" tooltip="Hora Chegada" change="" />
+					
+					<!-- 1º coluna - Fim -->
+
+					<!-- 2º coluna - Início -->
+
+					<core:Title text="" level="H6"/>
+
+					<FlexBox justifyContent="Center" alignItems="Center" class="sapUiTinyMarginTop">
+						<core:Icon class="sapUiSmallMarginEnd" tooltip="Atualizar Consulta" src="sap-icon://refresh" 
+					    	press="onAtualizarConsulta" decorative="false"/>						
+						<layoutData>
+							<l:GridData span="XL2 L2 M2 S2"/>
+						</layoutData>
+					</FlexBox>
+
+					<!-- 2º coluna - Fim -->
+					
+				</f:content>
+		
+			</f:SimpleForm>
+
+			<IconTabBar id="idIconTabBarMulti" class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter icon="sap-icon://documents" text="Tipos">
+						
+						<Table id="idParceiros" width="auto" itemPress="onEditDetalheTipoDeOrdemVenda"
+							noDataText="Nenhum tipo de ordem foi localizado" busyIndicatorDelay="{detailView>/lineItemTableDelay}" fixedLayout="false"
+							class="sapUiResponsiveMargin" items="{/Parceiros}">
+							<!-- <headerToolbar> -->
+								<!-- <Toolbar> -->
+									<!-- <Title text="Checklist"/> -->
+									<!-- <ToolbarSpacer/> -->
+									<!-- <Button icon="sap-icon://search" press="onConsultaChecklist"/> -->
+								<!-- </Toolbar> -->
+							<!-- </headerToolbar> -->
+							<columns>
+								<Column>
+									<Text text="ID" tooltip="Identificação do Tipo da Ordem de Venda" />
+								</Column>
+								<Column>
+									<Text text="Tipo da Ordem" tooltip="Tipo de Ordem de Venda SAP" />
+								</Column>								
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="Descrição" tooltip="Descrição do Tipo da Ordem de Venda"/>
+								</Column>
+							</columns>
+							<items >
+								<ColumnListItem type="Navigation" press="onEditDetalheTipoDeOrdemVenda">
+									<cells>
+										<ObjectIdentifier text="{idTipoOrdemVenda}"/>
+										<Text text="{codigoTipoOrdemVenda}" />
+										<Text text="{descricaoTipoOrdemVenda}" />
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+						
+					</IconTabFilter>
+								
+				</items>
+			</IconTabBar>
+
+		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button type="Emphasized" id="btnCriarParceiro" icon="sap-icon://add-document" 
+						text="Novo" press="onbtnCriarTipoDeOrdemVenda" tooltip="Novo Tipo de Ordem de Venda">
+					<layoutData><OverflowToolbarLayoutData priority="NeverOverflow"/></layoutData>
+				</Button>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>
