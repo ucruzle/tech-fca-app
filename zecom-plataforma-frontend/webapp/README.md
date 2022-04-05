@@ -1,2 +1,2 @@
 # ZECOM-PLATAFORMA-FRONTEND
-ZE-Com - Gestão de Comércio Eletrônico
+ZE-Com: Gestão de Comércio Eletrônico
