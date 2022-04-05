@@ -1,0 +1,43 @@
+<core:FragmentDefinition xmlns="sap.m" 
+						 xmlns:l="sap.ui.layout" 
+						 xmlns:core="sap.ui.core" 
+						 xmlns:f="sap.ui.layout.form"
+						 xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	
+	<Dialog title="Cria nova organização de venda'" class="sapUiSizeCompact" contentWidth="30%" contentHeight="45%">
+		
+		<Panel width="auto" class="sapUiResponsiveMargin">
+			<content>
+				
+				<f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="2" labelSpanL="3" labelSpanM="12" labelSpanS="12"
+							  adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="3" columnsM="3"
+							  singleContainerFullSize="false">
+					<f:content>
+				
+						<!-- 1º Início - Coluna -->
+				
+						<core:Title text="" level="H6"/>
+						<Label text="OV" />
+						<Input id="codigoOrganizacaoVenda" value="{ path: '/codigoOrganizacaoVenda' }" tooltip="Código de Organização de Vendas SAP" />
+						<Label text="Descrição" />
+						<Input id="descricaoOrganizacaoVenda" value="{ path: '/descricaoOrganizacaoVenda' }" tooltip="Descrição da Organização de Vendas" />
+						
+						<!-- 1º Fim - Coluna -->
+						
+					</f:content>
+					
+				</f:SimpleForm>
+				
+			</content>
+		</Panel>
+		
+		<beginButton>
+			<Button type="Emphasized" text="Confirmar" press="onGravarOrganizacaoDeVenda" />
+		</beginButton>
+		<endButton>
+			<Button text="Fechar" press="onCloseOrganizacaoDeVenda" />
+		</endButton>
+		
+	</Dialog>
+	
+</core:FragmentDefinition>
